@@ -9,6 +9,7 @@ import Login from './Component/Register/Login';
 import BasicExample from './Component/Nav/BasicExample';
 import TripHistory from './Component/Trips/TripHistory';
 import UserConnection from './Component/Social/UserConnection';
+import Welcome from './Component/Home/Welcome';
 function App() {
   return (
    <>
@@ -16,6 +17,7 @@ function App() {
    <BrowserRouter>
    <BasicExample/>
    <Routes>
+    <Route path='/' element={<Welcome/>}/>
          <Route path='/network' element={<Social/>}/>
          <Route path='/profile' element={<Profile/>}/>
          <Route path='/home' element={<Home/>}/>

@@ -50,7 +50,7 @@ function Popup({onClose,onSubmitting})
          console.log(alldata);
        
  
-      const fetchedData=await axios.post(`http://localhost:8000/trip/newtrip/${userId}`,{
+      const fetchedData=await axios.post(`https://travelandshare.onrender.com/trip/newtrip/${userId}`,{
         alldata
       },{withCredentials:true})
       console.log("This is fetchedData",fetchedData);

@@ -3,7 +3,7 @@ import { useCookies } from 'react-cookie';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from "react-toastify";
 import { useDispatch } from 'react-redux';
-import { fetchData } from '../../Redux/slices/UserDetail';
+import { fetchData } from '../../Redux/Slices/UserDetail.js';
 
 import axios from 'axios';
 function Welcome(props) {
@@ -18,7 +18,7 @@ function Welcome(props) {
              {
                 navigate ('/')
              }
-             const {data}=await axios.post('http://localhost:8000',{
+             const {data}=await axios.post('https://travelandshare.onrender.com',{
                 
              },{
                 withCredentials:true
