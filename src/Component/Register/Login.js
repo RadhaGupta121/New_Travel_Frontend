@@ -20,7 +20,7 @@ const navigate=useNavigate();
     };
 
     try {
-      const output = await axios.post('http://localhost:8000/login', data, { withCredentials: true });
+      const output = await axios.post('https://travelandshare.onrender.com/login', data, { withCredentials: true });
       const userInfo = output.data.userInfo;
       console.log(userInfo);
       dispatch(fetchData(userInfo));
