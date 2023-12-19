@@ -29,7 +29,7 @@ function Social(props) {
     console.log(data);
    async function handleConnect(item)
     {
-      const fetched=await axios.post(`http://localhost:8000/trip/addconnection/${userId}`,{
+      const fetched=await axios.post(`https://travelandshare.onrender.com//trip/addconnection/${userId}`,{
          item
       },{withCredentials:true})
      
