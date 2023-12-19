@@ -1,24 +1,31 @@
 import logo from './logo.svg';
 import './App.css';
-
+import {BrowserRouter,Routes,Route} from 'react-router-dom';
+import Social from './Component/Social/Social';
+import Profile from './Component/Profile/Profile';
+import Home from './Component/Home/Home';
+import Register from './Component/Register/Register';
+import Login from './Component/Register/Login';
+import BasicExample from './Component/Nav/BasicExample';
+import TripHistory from './Component/Trips/TripHistory';
+import UserConnection from './Component/Social/UserConnection';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <>
+   
+   <BrowserRouter>
+   <BasicExample/>
+   <Routes>
+         <Route path='/network' element={<Social/>}/>
+         <Route path='/profile' element={<Profile/>}/>
+         <Route path='/home' element={<Home/>}/>
+         <Route path='/register' element={<Register/>}/>
+         <Route path='/login' element={<Login/>}/>
+         <Route path='/triphistory' element={<TripHistory/>}/>
+         <Route path='/myconnection' element={<UserConnection/>}/>
+   </Routes>
+   </BrowserRouter>
+   </>
   );
 }
 
