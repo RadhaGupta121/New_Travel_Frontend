@@ -18,7 +18,7 @@ function Welcome(props) {
              {
                 navigate ('/')
              }
-             const {data}=await axios.post('http://localhost:8000',{
+             const {data}=await axios.post('https://travelandshare.onrender.com',{
                 
              },{
                 withCredentials:true
