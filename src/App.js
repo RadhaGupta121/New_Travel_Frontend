@@ -9,6 +9,7 @@ import Login from './Component/Register/Login';
 import BasicExample from './Component/Nav/BasicExample';
 import TripHistory from './Component/Trips/TripHistory';
 import UserConnection from './Component/Social/UserConnection';
+import Welcome from './Component/Home/Welcome';
 function App() {
   return (
    <>
