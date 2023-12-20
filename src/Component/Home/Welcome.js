@@ -50,7 +50,7 @@ function Welcome(props) {
     },[cookies,removeCookie,navigate])
     const Logout=()=>{
         removeCookie('token');
-        navigate('/signin');
+        navigate('/login');
     }
     return (
         <div>
