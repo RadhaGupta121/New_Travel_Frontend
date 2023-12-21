@@ -44,7 +44,7 @@ function ShowMap(props) {
     
   
     return (
-        <div style={{width:"30vw",height:"50vh"}}>
+        <div style={{width:"30vw",height:"30vh"}}>
             <div className='map-input' style={{width:"100%",}}>
                 <input type='text' placeholder='Enter origin' ref={originref}/>
                 <Button onClick={() => map && map.panTo(center)}>Locate Origin</Button>
