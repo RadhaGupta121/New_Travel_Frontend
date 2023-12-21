@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-
+import ShowMap from '../MapFeature/ShowMap';
 // import './travel.css'
 import UserConnection from '../Social/UserConnection';
 function Travel({ CollectallData }) {
