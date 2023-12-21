@@ -119,7 +119,7 @@ const[newactivity,setNewactivity]=useState('');
           );
         })}
       </div>
-    
+    <ShowMap/>
     </div>
     <hr/>
     <div style={{textAlign:"center",color:"maroon",fontSize:"2rem"}}>
