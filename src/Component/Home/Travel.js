@@ -123,13 +123,15 @@ const[newactivity,setNewactivity]=useState('');
     <ShowMap/>
     </div>
     <hr/>
-    <div style={{textAlign:"center",color:"maroon",fontSize:"2rem"}}>
+   <div style={{marginTop:"5rem",padding:"12px",backgroundColor:"rgb(23,24,53,0.8)"}}>
+    <div style={{textAlign:"center",color:"white",fontSize:"2rem"}}>
       
-      <span style={{backgroundColor:"yellowgreen"}}>Invite your Connection
+      <span >Invite your Connection
         </span>
       </div>
-    <hr/>
-     <UserConnection invitation="Send Invitation"/>
+    
+      <UserConnection invitation="Send Invitation"/>
+      </div>
       </>
   );
 }
