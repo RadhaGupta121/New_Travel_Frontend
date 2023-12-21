@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import ShowMap from '../MapFeature/ShowMap';
+import ShowMap from './ShowMap';
+import './showmap.css';
 // import './travel.css'
 import UserConnection from '../Social/UserConnection';
 function Travel({ CollectallData }) {
