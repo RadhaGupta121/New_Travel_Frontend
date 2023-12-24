@@ -1,6 +1,5 @@
 import {useEffect, useState} from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { icon } from '@fortawesome/fontawesome-svg-core/import.macro'
+
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import axios from 'axios';
@@ -8,7 +7,7 @@ import img1 from '../../img/connect.jpg'
 import { useSelector } from 'react-redux';
 // import { fetchData } from '../../Redux/Slices/UserDetail';
 import { useNavigate } from 'react-router-dom';
-import ShowMap from '../MapFeature/ShowMap';
+import ShowMap from '../MapFeature/MapFeatureShowMap';
 import './profile.css'
 function MyCard(props) {
   const userData = useSelector((state) => state.userDetail);
@@ -49,7 +48,7 @@ function handleDetailVisibility(param)
       
          <img src={img1} alt='not found' style={{width:"8rem",height:"8rem",marginTop:"3rem",marginBottom:"-3rem",borderRadius:"50%",border:"2px solid gray",padding:"4px"}}/>
          <span onClick={handleEdit} style={{position:"absolute",top:"12px",right:"12px"}}>
-        <FontAwesomeIcon icon={icon({name:'pencil'})}/>
+        {/* <FontAwesomeIcon icon={icon({name:'pencil'})}/> */}
         </span>
       </div>
       <hr/>
@@ -57,20 +56,10 @@ function handleDetailVisibility(param)
       
         {/* <textarea style={{textAlign:"center",marginTop:"3rem",fontSize:"2rem"}} value={detail}/> */}
         <h2 style={{textAlign:"center",marginTop:"3rem",fontSize:"2rem"}}>{detail}</h2>
-        <div className='detail' style={{display:'flex',justifyContent:"space-evenly",marginTop:"1rem"}}>
-          <span className='name' onMouseOver={()=>handleDetailVisibility(prevTitle)}>
-          <FontAwesomeIcon icon={icon({name: 'user'})} /> 
-          </span>
-          <span className='address' onMouseOver={()=>handleDetailVisibility(prevLocation)}>
-          <FontAwesomeIcon icon={icon({name: 'home'})} /> 
-         
-          </span>
-          <span className='email' onMouseOver={()=>handleDetailVisibility(prevUserId)}>
-          <FontAwesomeIcon icon={icon({name: 'envelope'})} /> 
-         
-          </span>
-          {/* https://randomuser.me/ */}
-        </div>
+       <div style={{display:"flex",justifyContent:"space-around",fontSize:"1.5rem",padding:"1rem"}}>
+        <span>{prevLocation}</span>
+        <span>{prevUserId}</span>
+       </div>
       </div>
     </div>
     
