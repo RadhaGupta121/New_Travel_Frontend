@@ -20,6 +20,8 @@ const navigate=useNavigate();
     };
 
     try {
+      // https://travelandshare.onrender.com
+      // const output = await axios.post('http://localhost:8000/login', data, { withCredentials: true });
       const output = await axios.post('https://travelandshare.onrender.com/login', data, { withCredentials: true });
       const userInfo = output.data.userInfo;
       console.log(userInfo);

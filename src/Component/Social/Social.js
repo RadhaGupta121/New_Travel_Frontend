@@ -3,7 +3,8 @@ import axios from 'axios';
 import { useSelector } from 'react-redux';
 // import { fetchData } from '../../Redux/Slices/UserDetail';
 import { useNavigate } from 'react-router-dom';
-
+import { Button } from 'react-bootstrap';
+import './social.css'
 // Implement a comprehensive social networking feature that enables users to search for, 
 // connect or follow other users.
 // https://randomuser.me/documentation#multiple
@@ -29,8 +30,10 @@ function Social(props) {
     console.log(data);
    async function handleConnect(item)
     {
+    //   const fetched=await axios.post(`http://localhost:8000/trip/addconnection/${userId}`,{
+      //https://travelandshare.onrender.com 
       const fetched=await axios.post(`https://travelandshare.onrender.com/trip/addconnection/${userId}`,{
-         item
+      item
       },{withCredentials:true})
      
         
@@ -51,7 +54,10 @@ function Social(props) {
     return data.length === 0  ? <h1>Loading...</h1> :(userId===undefined?navigate ('/signin'): (
         <>
            <div style={{display:"flex",justifyContent:"center",gap:"2rem",margin:"1rem"}}>
-           <button onClick={()=>showConnection()}>Connection</button>
+           <Button className='connection-btn'  variant='outline-dark'
+     
+  
+           onClick={()=>showConnection()}>Connection</Button>
        
            </div>
            <hr/>
@@ -74,8 +80,8 @@ function Social(props) {
                                 <p>🏠{visibility===true? item.location.state:item.state} {visibility===true? item.location.country:item.country}</p>
                             </div>
                             <div style={{display:"flex",gap:"2rem"}}>
-                            <button onClick={()=>handleFollow(item)} >Follow</button>
-                            <button onClick={()=>handleConnect(item)}>Connect</button>
+                            <Button className='connection-btn' onClick={()=>handleFollow(item)} >Follow</Button>
+                            <Button className='connection-btn' onClick={()=>handleConnect(item)}>Connect</Button>
                             </div>
                             
                         </div>

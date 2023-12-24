@@ -17,7 +17,11 @@ function TripHistory() {
         },[])
       async  function fetchingData()
         {
+            // const fetched=await axios.get(`http://localhost:8000/trip/getalltrip/${userId}`,{
+
+            //https://travelandshare.onrender.com
             const fetched=await axios.get(`https://travelandshare.onrender.com/trip/getalltrip/${userId}`,{
+
          
       },{withCredentials:true})
       setalltrip(fetched.data.alltrip);

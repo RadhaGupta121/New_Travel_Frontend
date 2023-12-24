@@ -26,7 +26,10 @@ async function handleSubmit(e)
             }
             console.log(data);
             try {
-                const output = await axios.post('https://travelandshare.onrender.com/register', data, { withCredentials: true });
+                // const output = await axios.post('http://localhost:8000/register', data, { withCredentials: true });
+               //https://travelandshare.onrender.com
+               const output = await axios.post('https://travelandshare.onrender.com/register', data, { withCredentials: true });
+              
                 const userInfo = output.data.userInfo;
                 console.log(userInfo);
                 dispatch(fetchData(userInfo));

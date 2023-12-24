@@ -17,7 +17,8 @@ function BasicExample() {
       navigate('/login');
   }
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
+    <Navbar expand="lg" className="bg-body-tertiary" 
+     style={{  background:'transparent', color:"black",backdropFilter:" blur(10px)"}}>
       <Container>
         <Navbar.Brand href="#home">TravelandShare</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -29,7 +30,7 @@ function BasicExample() {
             <Nav.Link as={Link} to="/register">Register</Nav.Link>
 
             </>):(<>
-           
+              <Nav.Link as={Link} to="/trendingtrip">Trending Trip</Nav.Link>
               <Nav.Link as={Link} to="/profile">Profile</Nav.Link>
             <Nav.Link as={Link} to="/network">Network</Nav.Link>
             <Nav.Link as={Link} to="/triphistory">My Trip</Nav.Link>

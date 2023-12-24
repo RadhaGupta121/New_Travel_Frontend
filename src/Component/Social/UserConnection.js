@@ -18,8 +18,10 @@ function UserConnection(props) {
        
         console.log('showconnection called');
         console.log(userId);
+        // const showConnections=await axios.get(`http://localhost:8000/trip/getallconnection/${userId}`,{
+        //     // https://travelandshare.onrender.com 
         const showConnections=await axios.get(`https://travelandshare.onrender.com/trip/getallconnection/${userId}`,{
-           
+         
          },{withCredentials:true})
          console.log("connected with user",showConnections.data.data[0].connections);
         const output=(showConnections.data.data[0].connections);

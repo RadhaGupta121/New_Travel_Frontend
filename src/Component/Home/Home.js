@@ -7,6 +7,7 @@ import './home.css'
 import { useCookies } from 'react-cookie';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import HomeAnimation from '../Animations/HomeAnimation';
 function Popup({onClose,onSubmitting})
 {
     const[data,setdata]=useState({});
@@ -48,12 +49,16 @@ function Popup({onClose,onSubmitting})
          alldata.push(userData);
          setalldata([...alldata]);
          console.log(alldata);
-       
+         const fetchedData=await axios.post(`https://travelandshare.onrender.com/trip/newtrip/${userId}`,{
+          alldata
+        },{withCredentials:true})
+        console.log("This is fetchedData",fetchedData);
+    
  
-      const fetchedData=await axios.post(`https://travelandshare.onrender.com/trip/newtrip/${userId}`,{
-        alldata
-      },{withCredentials:true})
-      console.log("This is fetchedData",fetchedData);
+      // const fetchedData=await axios.post(`http://localhost:8000/trip/newtrip/${userId}`,{
+      //   alldata
+      // },{withCredentials:true})
+      // console.log("This is fetchedData",fetchedData);
   
   
         {onSubmitting(alldata)}
@@ -96,7 +101,7 @@ function Popup({onClose,onSubmitting})
     
   return(
     <>
-      <div style={{display:"flex",justifyContent:"center",flexWrap:"wrap",}}>
+      <div style={{display:"flex",justifyContent:"center",position:"relative",flexWrap:"wrap",zIndex:"10000"}}>
         
         <div className='form-container' style={{backgroundColor:"rgba(68, 158, 157, 0.9)",padding:"20px",margin:"-2rem"}}>
         <div style={{display:"flex",justifyContent:"space-evenly"}}>
@@ -152,14 +157,14 @@ function Home() {
 
   console.log("useData from home.js",userData.value._id);
   const userId=userData.value._id;
-
+    const[showHomeAmination,setHomeAmination]=useState(true);
     const[isPopOpen,setPopOpen]=useState(false);
     const[alldata,setData]=useState('');
     console.log(alldata);
     function ClosePopUp()
     {
         setPopOpen(false);
-     
+       setHomeAmination(false);
         console.log("This is collected data of home",alldata);
     }
     function CollectallData(props)
@@ -170,10 +175,15 @@ function Home() {
     }
     return  (
         <div className='home'>
-          <div style={{display:"flex",justifyContent:"center"}}>
-          <Button onClick={()=>{if(userId===undefined)navigate('/login'); else setPopOpen(true)}}>Create a Trip</Button>
+          <div style={{display:"flex",justifyContent:"center",position:'absolute',left:"45%",top:"12%" , zIndex:'1000'}}>
+          <Button className='connection-btn createTrip' onClick={()=>{if(userId===undefined)navigate('/login'); else {
+             setHomeAmination(false);
+            setPopOpen(true)
+          }}}>Create a Trip</Button>
           </div>
-        
+        {
+          showHomeAmination?<HomeAnimation/>:null
+        }
          {
             isPopOpen?
             <Popup onClose={ClosePopUp} onSubmitting={CollectallData}/>:null

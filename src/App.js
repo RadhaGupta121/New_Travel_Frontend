@@ -10,10 +10,13 @@ import BasicExample from './Component/Nav/BasicExample';
 import TripHistory from './Component/Trips/TripHistory';
 import UserConnection from './Component/Social/UserConnection';
 import Welcome from './Component/Home/Welcome';
+import ShowMap from './Component/MapFeature/ShowMap';
+import TrendingTrip from './Component/Trending Trip/TrendingTrip';
 function App() {
+//Send invitation enable,add comment,follow request,upload image in profile, adding searchbar for searching user
   return (
    <>
-   
+  
    <BrowserRouter>
    <BasicExample/>
    <Routes>
@@ -25,6 +28,7 @@ function App() {
          <Route path='/login' element={<Login/>}/>
          <Route path='/triphistory' element={<TripHistory/>}/>
          <Route path='/myconnection' element={<UserConnection/>}/>
+         <Route path='/trendingtrip' element={<TrendingTrip/>}/>
    </Routes>
    </BrowserRouter>
    </>
