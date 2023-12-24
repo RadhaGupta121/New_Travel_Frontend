@@ -18,9 +18,14 @@ function Welcome(props) {
              {
                 navigate ('/')
              }
+<<<<<<< HEAD
              //https://travelandshare.onrender.com
             //  const {data}=await axios.post('http://localhost:8000/',{
               const {data} =await axios.post('https://travelandshare.onrender.com/',{
+=======
+             const {data}=await axios.post('https://travelandshare.onrender.com',{
+                
+>>>>>>> f782cef3077d033773fd00779dd815dfdcdedd1f
              },{
                 withCredentials:true
              })
@@ -51,7 +56,7 @@ function Welcome(props) {
     },[cookies,removeCookie,navigate])
     const Logout=()=>{
         removeCookie('token');
-        navigate('/signin');
+        navigate('/login');
     }
     return (
         <div>

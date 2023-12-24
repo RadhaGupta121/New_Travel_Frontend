@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-
+import ShowMap from './ShowMap';
+import './showmap.css';
 // import './travel.css'
 import UserConnection from '../Social/UserConnection';
 import ShowMap from '../MapFeature/ShowMap';
@@ -120,6 +121,7 @@ const[newactivity,setNewactivity]=useState('');
           );
         })}
       </div>
+<<<<<<< HEAD
      
       <ShowMap/>
        
@@ -127,6 +129,12 @@ const[newactivity,setNewactivity]=useState('');
     </div>
     <hr/>
     <div style={{marginTop:"5rem",padding:"12px",backgroundColor:"rgb(23,24,53,0.8)"}}>
+=======
+    <ShowMap/>
+    </div>
+    <hr/>
+   <div style={{marginTop:"5rem",padding:"12px",backgroundColor:"rgb(23,24,53,0.8)"}}>
+>>>>>>> f782cef3077d033773fd00779dd815dfdcdedd1f
     <div style={{textAlign:"center",color:"white",fontSize:"2rem"}}>
       
       <span >Invite your Connection
@@ -135,7 +143,10 @@ const[newactivity,setNewactivity]=useState('');
     
       <UserConnection invitation="Send Invitation"/>
       </div>
+<<<<<<< HEAD
     
+=======
+>>>>>>> f782cef3077d033773fd00779dd815dfdcdedd1f
       </>
   );
 }

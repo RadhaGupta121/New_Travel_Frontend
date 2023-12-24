@@ -30,10 +30,15 @@ function Social(props) {
     console.log(data);
    async function handleConnect(item)
     {
+<<<<<<< HEAD
     //   const fetched=await axios.post(`http://localhost:8000/trip/addconnection/${userId}`,{
       //https://travelandshare.onrender.com 
       const fetched=await axios.post(`https://travelandshare.onrender.com/trip/addconnection/${userId}`,{
       item
+=======
+      const fetched=await axios.post(`https://travelandshare.onrender.com//trip/addconnection/${userId}`,{
+         item
+>>>>>>> f782cef3077d033773fd00779dd815dfdcdedd1f
       },{withCredentials:true})
      
         

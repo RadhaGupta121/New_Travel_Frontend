@@ -55,10 +55,17 @@ function Popup({onClose,onSubmitting})
         console.log("This is fetchedData",fetchedData);
     
  
+<<<<<<< HEAD
       // const fetchedData=await axios.post(`http://localhost:8000/trip/newtrip/${userId}`,{
       //   alldata
       // },{withCredentials:true})
       // console.log("This is fetchedData",fetchedData);
+=======
+      const fetchedData=await axios.post(`https://travelandshare.onrender.com/trip/newtrip/${userId}`,{
+        alldata
+      },{withCredentials:true})
+      console.log("This is fetchedData",fetchedData);
+>>>>>>> f782cef3077d033773fd00779dd815dfdcdedd1f
   
   
         {onSubmitting(alldata)}
